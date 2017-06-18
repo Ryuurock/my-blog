@@ -1,0 +1,21 @@
+prev: 上一页
+next: 下一页
+comment: 留言
+archive_a: 归档
+archive_b: 归档：%s
+
+title:
+  archive: 归档
+  category: 分类
+  tag: 标签
+  schedule: 日程表
+  
+menu:
+  home: 首页
+  archives: 归档
+  categories: 分类
+  schedule: 日程
+  tags: 标签
+  about: 关于
+  search: 搜索
+  commonweal: 公益404
