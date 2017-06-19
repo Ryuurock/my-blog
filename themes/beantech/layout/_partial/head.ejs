@@ -1,10 +1,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="os9PKwfaQx" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<%= config.description %>">
-    <meta name="keyword" content="<%= config.keyword %>">
+    <meta name="description" content="<%=page.description ||  config.description %>">
+    <meta name="keyword" content="<%= page.keyword || config.keyword %>">
     <link rel="shortcut icon" href="<%= config.root %>img/ironman-draw.png">
     <!-- Place this tag in your head or just before your close body tag. -->
     
@@ -17,6 +17,10 @@
     </title>
 
     <link rel="canonical" href="<%= config.url + config.root + (page.path||'').replace('index.html', '') %>">
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core CSS -->
     <%- css('css/bootstrap.min.css') %>
@@ -35,10 +39,6 @@
 
     <%- css('css/toc')%>
 
-    <!-- Custom Fonts -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_qt49r5gb9r8b0529.css">
 

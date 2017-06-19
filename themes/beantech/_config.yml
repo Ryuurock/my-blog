@@ -4,18 +4,5 @@
 #    normal | night | night yilia | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
 # night yilia - https://github.com/litten/hexo-theme-yilia
-highlight_theme: night
+highlight_theme: night bright
 
-# ---------------------------------------------------------------
-# Menu Settings
-# ---------------------------------------------------------------
-
-# When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
-menu:
-  home: /
-  #categories: /categories/
-  #about: /about/
-  archives: /archives/
-  tags: /tags/
-  #sitemap: /sitemap.xml
-  #commonweal: /404.html

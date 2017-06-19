@@ -88,21 +88,21 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 
 
 ## Friends
-friends: [
-    {
-        title: "Bean Tech",
-        href: "http://beantech.org"
-    },{
-        title: "Kaijun's Blog",
-        href: "http://blog.kaijun.rocks"
-    },{
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
-    },{
-        title: "It Helps SEO",
-        href: "#"
-    }
-]
+# friends: [
+#     {
+#         title: "Bean Tech",
+#         href: "http://beantech.org"
+#     },{
+#         title: "Kaijun's Blog",
+#         href: "http://blog.kaijun.rocks"
+#     },{
+#         title: "Hux Blog",
+#         href: "http://huangxuan.me"
+#     },{
+#         title: "It Helps SEO",
+#         href: "#"
+#     }
+# ]
 
 
 #Custom Setting End
