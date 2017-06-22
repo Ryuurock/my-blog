@@ -49,12 +49,12 @@ $.fn.extend( {
       if ( navigator.userAgent.toLowerCase().indexOf( "firefox" ) > 0 ) {
         _this.addEventListener( 'DOMMouseScroll', function( e ) {
           // 滚动到最下面，并且鼠标向上（反正是一直往下拉那个动作）
-          if ( this.scrollTop + this.clientHeight == this.scrollHeight && e.detail < 0 ) {
+          if ( this.scrollTop + this.clientHeight == this.scrollHeight && e.detail > 0 ) {
             e.preventDefault();
             e.returnValue = false;
           }
           // 滚动到最上面，并且鼠标向下（反正是一直往上拉那个动作）
-          else if ( this.scrollTop === 0 && e.wheelDelta > 0 ) {
+          else if ( this.scrollTop === 0 && e.detail < 0 ) {
             e.preventDefault();
             e.returnValue = false;
           }
