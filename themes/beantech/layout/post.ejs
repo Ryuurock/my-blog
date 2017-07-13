@@ -15,11 +15,21 @@ layout: layout
                 post-container">
 
                 <%- page.content %>
-                
 
                 <hr>
+                <!-- JiaThis Button BEGIN -->
+                <div class="jiathis_style_24x24">
+                    <a class="jiathis_button_weixin"></a>
+                    <a class="jiathis_button_qzone"></a>
+                    <a class="jiathis_button_tsina"></a>
+                    <a class="jiathis_button_cqq"></a>
+                    <a class="jiathis_button_fb"></a>
+                    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                </div>
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
                 <!-- Pager -->
-                <ul class="pager">
+                <ul class="pager clearfix">
                     <% if (page.prev){ %>
                         <li class="previous">
                             <a href="<%- config.root %><%- page.prev.path %>" data-toggle="tooltip" data-placement="top" title="<%- page.prev.title %>">&larr; Previous Post</a>
@@ -54,20 +64,12 @@ layout: layout
                     <hr>
                     </div>
                 <% } %>
-                <!-- 多说 Share end-->
 
-                <!-- 多说评论框 start -->
-                <% if(config['duoshuo_username']) { %>
-                    <div class="comment">
-                        <div class="ds-thread"
-                            data-thread-key="<%= page.path %>"
-                            data-title="<%= page.title %>"
-                            data-url="<%= page.permalink %>" >
-                        </div>
-                    </div>
-                <% } %>
-                <!-- 多说评论框 end -->
-
+                <!-- UY BEGIN -->
+                <br>
+                <div id="uyan_frame"></div>
+                <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2138668"></script>
+                <!-- UY END -->
                 <!-- disqus comment start -->
                 <% if(config['disqus_username']) { %>
                     <div class="comment">

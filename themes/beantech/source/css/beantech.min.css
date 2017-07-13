@@ -17,6 +17,29 @@
 .sidebar-container .short-about img{width:80%;display:block;border-radius:5px;margin-bottom:20px}
 .sidebar-container .short-about p{margin-top:0;margin-bottom:20px}
 .sidebar-container .short-about .list-inline>li{padding-left:0}
+/* 分享插件 */
+#jiathis_weixin_share p{
+	margin: 0;
+}
+.jiathis_style_24x24{
+	height: 22px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  opacity: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 8px;
+}
+hr{border-color: #ccc}
 body{font-family:-apple-system,"Helvetica Neue","Arial","PingFang SC","Hiragino Sans GB","STHeiti","Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;line-height:1.7;font-size:16px;color:#404040;overflow-x:hidden}
 p{margin:30px 0}
 h1,
@@ -36,7 +59,7 @@ a:hover .fa-stack{transform:scale(1.2)}
 a img:hover,
 a img:focus{cursor:zoom-in}
 article{overflow:visible;}
-blockquote{color:gray;font-style:italic;font-size:.95em;margin:20px 0 20px}
+blockquote{color:gray;font-size:.95em;margin:20px 0 20px;background-color:whitesmoke;}
 blockquote p{margin:0}
 small.img-hint{display:block;margin-top:-20px;text-align:center}
 br+small.img-hint{margin-top:-40px}
@@ -132,7 +155,7 @@ pre code{display:block;width:auto;white-space:pre;word-wrap:normal}
 	.navbar-custom.is-fixed .nav li a:focus{color:#0085a1}
 	.navbar-custom.is-visible{-webkit-transform:translate3d(0,100%,0);-moz-transform:translate3d(0,100%,0);-ms-transform:translate3d(0,100%,0);-o-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}
 }
-.intro-header{background:no-repeat center center;background-color:gray;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover;margin-bottom:0}
+.intro-header{position: relative;background:no-repeat center center;background-color:gray;background-attachment:scroll;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover;margin-bottom:0}
 @media only screen and (min-width:768px){
 	.intro-header{margin-bottom:20px}
 }
