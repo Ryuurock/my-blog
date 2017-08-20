@@ -183,5 +183,8 @@ sitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/Ryuurock/Ryuurock.github.io.git
-  branch: 
+  repo: 
+    github: https://github.com/Ryuurock/Ryuurock.github.io.git
+    # coding: https://git.coding.net/Ryuurock/Ryuurock.git
+    oschina: https://git.oschina.net/sherlockl/sherlockl.git
+  branch: master
