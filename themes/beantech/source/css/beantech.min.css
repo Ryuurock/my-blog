@@ -508,14 +508,15 @@ pre code {
 
 .intro-header {
 	position: relative;
-	background: no-repeat center center;
 	background-color: gray;
 	background-attachment: fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
 	-o-background-size: cover;
-	margin-bottom: 0
+	margin-bottom: 0;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 @media only screen and (min-width:768px) {
