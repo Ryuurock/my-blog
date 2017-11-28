@@ -1,8 +1,8 @@
 ---
-title: 记一次chrome扩展开发经历
+title: 记一次chrome扩展开发
 catalog: true
 date: 2017-11-27 21:21:54
-subtitle: demo做到位，调查不可少
+subtitle: 
 header-img: post/IMG_3167.JPG
 tags:
 - chrome extention
@@ -35,9 +35,9 @@ chrome插件最重要的是一个叫`manifest.json`的文件，文件描述了�
 监听来自扩展的事件，只需要一处就够了，扩展通过带过来的数据来告知模块需要发布或处理怎样的数据，所以定义的页面端的模块传入数据是这样的
 ```json
 {
-  event: '',
-  platform: '',
-  data: {}
+  "event": "",
+  "platform": "",
+  "data": {}
 }
 ```
 所以我在事件监听处是这么写的
@@ -67,9 +67,9 @@ document.body.addEventListener( 'extensionBrowerEvent', function( { detail } ) {
 这些事件中，有些需要模块来处理，有些需要模块调用者来处理，所以在上面的`if`逻辑里，就是用扩展通知的数据去匹配定义在对象里的函数进行处理，处理后再由函数决定是否发布此事件，若没有匹配到，则直接在此发布事件，说明此事件应由模块调用者自己处理。举个例子，扩展发出的数据是这样的
 ```json
 {
-  event: 'scanCode',
-  platform: 'wechat',
-  data: undefined
+  "event": "scanCode",
+  "platform": "wechat",
+  "data": null
 }
 ```
 于是我们在平台为`wechat`的模块里定义了它的处理函数
@@ -194,5 +194,5 @@ XMLHttpRequest.prototype.send = ( function( original_function ) {
 * iframe内发起的事件带出的数据，扩展内无法接收到也不知道是什么原因，所以最后我就放置了一个`textarea`标签来作为容器，通知扩展去取。
 * 自定义事件带入的数据需要{ detail: data } 这样的结构，因为在接收方需要以`event.detail`的方式去取。
 
-说了这么久感觉讲得不是很好，所以决定直接把代码放到github吧。
+说了这么久感觉讲得不是很好，所以决定直接把代码放到github吧。[仓库地址](https://github.com/Ryuurock/blog-code/tree/master/chrome-extention-demo)
 
