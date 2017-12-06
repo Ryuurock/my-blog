@@ -70,3 +70,34 @@ function recursionSearch( arrayData, searchText ) {
 }
 ```
 结果终究是出来了，居然花了一个多小时，中间一度要放弃了，但是秉着“老司机”的光环坚持弄出来了，还是蛮开心的。令人汗颜的是花了这么久。(lll￢ω￢)
+
+//-----------------更新----------------
+如果这里需求变了，不再按照title来检索，而是检索disabled的项目，或者其他条件呢，上面的递归函数则需要变动一下，将检索条件开放出来由调用者自己来决定
+```js
+function recursionFilter( arrayData, filter ) {
+  let newArry = [];
+  arrayData = arrayData.nodes || arrayData
+  for ( let i = 0, item; item = arrayData[ i++ ]; ) {
+
+    if ( filter( item ) ) {
+      newArry.push( item );
+    } else {
+      if ( item.nodes ) {
+        let result = recursionFilter( item, filter );
+        if ( result.length ) {
+          item.nodes = result;
+          newArry.push( item )
+        }
+      }
+    }
+  }
+  return newArry;
+}
+
+// 调用者
+let result = recursionFilter( treeData, function( item ) {
+  return item.state.check === true
+} )
+```
+`filter`参数就是调用者传递的回调参数，执行的结果应该是一个boolean值来确定当前项目是否符合检索条件。
+

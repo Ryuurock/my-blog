@@ -1,5 +1,5 @@
 ---
-title: Vuejs多页weback配置
+title: 多页、多入口、前后端耦合的webpack配置
 catalog: true
 date: 2017-08-17 21:08:48
 subtitle:
