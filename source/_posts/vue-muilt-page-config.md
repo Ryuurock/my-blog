@@ -40,6 +40,34 @@ require( './style.less' );
 
 #### images
 这里为什么会有一个`images`目录看起来很多余呢，那是因为我们的php模板里的图片标签`src`前面都带了一个`php`的系统变量，`webpack`插件的静态分析是无法识别这里的路径的，所以保留了这个目录，在打包后用插件拷贝到打包目录里
+****
+2018年1月19日更新，后面发现了一个有趣的插件，可以在这里识别这些后端的常量代码如下
+```js
+new webpack.NormalModuleReplacementPlugin(
+  /__RESPATH__/,
+  function( resource ) {
+    // 我们在这里直接替换这个常量让webpack插件（file-loader）去解析
+    resource.request = resource.request.replace( /^\.\/__RESPATH__/, path.resolve( __dirname, '..', 'Public/dev' ) );
+  }
+),
+```
+
+还有一些疑难杂症的url例如(只针对html-loader)
+```
+__RESPATH__/images/hy{$_SESSION['vip']|default='0'}.png
+```
+这种插件也是无法识别的，而且html-loader目前也不支持url筛选，估计是要等到1.0版本吧，解决方案也是很绕，修改一句它的源码（为了方便就把它整个代码拷贝出来吧）
+/html-loader/index.js
+54行的位置大概是，在
+```js
+if ( !loaderUtils.isUrlRequest( link.value, root ) ) return;
+```
+下面添加一句
+```js
+if ( link.value.match( /\{\$[\s\S]*?\}/ ) ) return;
+```
+将匹配到{$xxxx}这种url直接跳过不解析，当然如果你是常量就做替换，这样就完美解决问题，等到html-loader更新支持筛选我们再切回去
+****
 
 #### page
 然后是`page`这个目录，这个目录是拿来存放我们页面的三剑客的，比如有一个叫`index`的目录，里面有`css`、`js`、`html`文件，这里的`index`可以看作是一个页面目录，也可以看作是一个分类，如果是分类，那下面就应该是页面了，html里不应该引用`css`文件和`js`文件，因为webpack会帮我们插入生成新的html到我们指定的目录里

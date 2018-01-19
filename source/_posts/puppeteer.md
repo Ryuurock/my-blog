@@ -18,7 +18,7 @@ tags:
 #### 网页截图
 这个功能可以说是一个特色功能了，虽然已经有`phantomjs`这种，但是实际的出图效果和肉眼看到的效果相差甚远，当然只是在一些css3样式下面会有这种情况，可能是编译的版本比较旧吧。前几日在逛掘金的时候看到有人发帖介绍这个puppeteer，重点介绍了截图的功能。突然想到公司项目里“截长图”这个万年难题，总是有这样那样的样式问题。于是我抽出了点时间照着Demo做了一份出来试试我们出问题的样式在它下面的截图效果。效果真的是非常非常好。下面是从安装到截图的步骤
 
-首先在项目里安装phantomjs
+首先在项目里安装puppeteer
 ```bash
 npm install puppeteer --ignore-scripts
 ```
@@ -91,10 +91,10 @@ const puppeteer = require('puppeteer');
   // 去到你想截图的页面
   await page.goto('https://example.com');
   // 将鼠标移动到这里
-  await page.mouse.move(1020, 250);
+  await page.mouse.move(1020, 250);
   // 按下鼠标
   await page.mouse.down()
-  // 将鼠标移动（模拟用户拖动的动作）
+  // 将鼠标移动（模拟用户拖动的动作）
   await page.mouse.move( 1266, 250, { step: 240 } )
   // 释放鼠标
   await page.mouse.up()
