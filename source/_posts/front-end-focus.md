@@ -39,7 +39,7 @@ function bar() {
 
 function foo() {
   console.log(2);
-  far();
+  bar();
 }
 
 setTimeout(() => {
