@@ -1041,7 +1041,8 @@ body {
 	}
 }
 
-.post-container img {
+.post-container img,
+.post-container video {
 	display: block;
 	max-width: 100%;
 	height: auto;

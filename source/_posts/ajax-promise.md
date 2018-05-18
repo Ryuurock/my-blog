@@ -96,10 +96,10 @@ $.get( '/example2', function( data ) {
 `$.when`方法接收不定个`deferred`类型的对象作为参数
 ```javascript
 $.when( 
-        $.ajax( '/example1' ),
-        $.ajax( '/example2' ), 
-        $.ajax( '/example3' )
-      ).then( function( data ) {
+  $.ajax( '/example1' ),
+  $.ajax( '/example2' ), 
+  $.ajax( '/example3' )
+).then( function( data ) {
   // do something
 } );
 ```
@@ -221,4 +221,3 @@ wtf!这么简单？是的，就是这么简单，这个函数内部，就是按�
 `async`函数还有许多用法和技巧，如果想详细了解依然可以移步阮一峰老师的[async 函数](http://es6.ruanyifeng.com/#docs/async)
 
 文章今天提到了`apply`函数，和其同路的还有`call`和`bind`，也许你又会说“好生僻”，可是，这都是经常用到的“神器”啊~，下一篇博文我将围绕这三个函数来讲讲他们的区别和实际使用
-

@@ -47,7 +47,7 @@ export function trigger( type, ...backParama ) {
   return _MESSAGES[ type ] && _MESSAGES[ type ].forEach( item => item.apply( this, backParama ) );
 }
 
-//  然后是组件本身的一些操作做完后
+// 然后是组件本身的一些操作做完后
 // some code
 // 发布一个叫message的事件，并回传一个叫'hello world'的字符串
 trigger( 'message', 'hello world!' );
