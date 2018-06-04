@@ -11,10 +11,10 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://ryuurock.me       # Note: don't forget to modify the CNAME file to your url
+url: https://ryuurock.com       # Note: don't forget to modify the CNAME file to your url
 root: /
 ## static resouce site
-static: http://orjknnptl.bkt.clouddn.com/
+static: /covers/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -184,7 +184,6 @@ sitemap:
 deploy:
   type: git
   repo: 
-    github: https://github.com/Ryuurock/Ryuurock.github.io.git
-    # coding: https://git.coding.net/Ryuurock/Ryuurock.git
+    github: git@github.com:Ryuurock/Ryuurock.github.io.git
     oschina: https://git.oschina.net/sherlockl/sherlockl.git
   branch: master

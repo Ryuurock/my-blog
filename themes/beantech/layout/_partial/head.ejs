@@ -1,14 +1,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="baidu-site-verification" content="4bwJEI8t8r" />
+    <meta name="baidu-site-verification" content="eulwuEPifC" />
     <meta name="google-site-verification" content="joVzxMTkPayXDku1yeDDsFCu-0IAjNpJpGWh_dNy6yQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<%=page.description ||  config.description %>">
     <meta name="keyword" content="<%= page.keyword || config.keyword %>">
     <link rel="icon" href="<%= config.root %>favicon.ico">
     <!-- Place this tag in your head or just before your close body tag. -->
-    
     <title>
         <% if (page.title) { %>
           <%= page.title + ' - ' + config.SEOTitle %>
@@ -16,31 +15,21 @@
           <%= config.SEOTitle %>
         <% } %>
     </title>
-
     <link rel="canonical" href="<%= config.url + config.root + (page.path||'').replace('index.html', '') %>">
     <!-- Custom Fonts -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link href="//cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Bootstrap Core CSS -->
     <%- css('css/bootstrap.min.css') %>
-
     <!-- Custom CSS --> 
     <%- css('css/beantech.min.css')%>
-    
     <!-- Pygments Highlight CSS -->
     <%- css('css/highlight') %>
-
     <%- css('css/widget')%>
-
     <%- css('css/rocket')%>
-
     <%- css('css/signature')%>
-
     <%- css('css/toc')%>
-
-
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_qt49r5gb9r8b0529.css">
 
 
@@ -50,7 +39,4 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
 </head>

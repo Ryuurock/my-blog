@@ -17,7 +17,7 @@ tags:
 `backdrop-filter`属性其实是一个草案中的属性，所以鲜为人知。但是chrome早在2016年的49版本就支持这个属性了，但默认是关闭的，可能多方面的原因使得这个属性不被默认打开，比如性能问题、草案中、实现效果等。
 开启方法是在地址输入`chrome://flags/`，找到`Experimental Web Platform features `，点击启用后重启浏览器。
 虽然提案中，但是还是无法阻止我们追求美的决心。下面是开启后的效果。
-<div style="padding: 50px 50px;color: #fff;text-align: center;font-size: 30px;background-image: url(http://orjknnptl.bkt.clouddn.com/post/2017100323131019.jpg);background-size: cover;background-attachment: fixed;position: relative;">
+<div style="padding: 50px 50px;color: #fff;text-align: center;font-size: 30px;background-image: url(/covers/post/2017100323131019.jpg);background-size: cover;background-attachment: fixed;position: relative;">
   <div style="position: absolute;top: 10px;width: 100%;">我<br/>被<br/>盖<br/>住<br/>啦</div>
   <p style="padding: 50px 0;backdrop-filter:blur(10px);background-color: rgba(0,0,0,.2)">Experimental Web Platform</p>
 </div>
@@ -32,7 +32,7 @@ tags:
   }
   .bg-demo:after{
     content: ' ';
-    background-image: url(http://orjknnptl.bkt.clouddn.com/post/2017100323131019.jpg);background-size: cover;background-attachment: fixed;
+    background-image: url(/covers/post/2017100323131019.jpg);background-size: cover;background-attachment: fixed;
     position: absolute;
     left: 0;top:0;
     height: 100%;
@@ -51,7 +51,7 @@ tags:
   }
   .bg-demo p{position: relative;z-index: 1;margin:0}
 </style>
-<div style="padding: 80px 50px;color: #fff;text-align: center;font-size: 30px;background-image: url(http://orjknnptl.bkt.clouddn.com/post/2017100323131019.jpg);background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;">
+<div style="padding: 80px 50px;color: #fff;text-align: center;font-size: 30px;background-image: url(/covers/post/2017100323131019.jpg);background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;">
   <div style="position: absolute;top: 10px;width: 100%;">我<br/>被<br/>盖<br/>住<br/>啦</div>
   <div class="bg-demo" style="padding: 50px 0;">
     <p>Experimental Web Platform</p>
