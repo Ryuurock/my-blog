@@ -5,7 +5,7 @@
 # Site
 title: Longwx Blog
 subtitle: 有一天就是今天，今天就是有一天
-author: Long Wanxiang(Ryuurock)
+author: Wanxiang Long(Ryuurock)
 language: zh-CN
 timezone:
 
@@ -21,10 +21,10 @@ permalink_defaults:
 #Custom Setting Start
 
 # Site settings
-SEOTitle: longwanxiang的博客 | Ryuurock
+SEOTitle: longwanxiang的博客 | Ryuurock | Web前端实习生
 email: lwx_1993@outlook.com
 description: ""
-keyword: ""
+keyword: "Web前端|前端|javascript|css|html|html5"
 header-img: home/201291116105179148.jpg
 signature: false #show signature
 signature-img: img/signature/BeanTechSign-white.png 

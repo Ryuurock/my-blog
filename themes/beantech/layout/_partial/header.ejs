@@ -6,10 +6,10 @@
             /* background-image: url('<%= config.static + config["header-img"] %>')  */
             /*config*/
         <%} else if (is_post()){%>
-            background-image: url('<%= config.static + page["header-img"] %>')
+            background-image: url('<%= config.static + (page["header-img"] || "post/IMG_2544.JPG") %>')
             /*post*/
         <%} else {%>
-            background-image: url('<%= config.static + page["header-img"] %>')
+            background-image: url('<%= config.static + (page["header-img"] || "post/IMG_2544.JPG") %>')
             /*page*/
         <%} %>
     }
