@@ -5,3 +5,4 @@ yarn-debug.log*
 yarn-error.log*
 Public/
 .deploy_git/
+db.json
