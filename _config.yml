@@ -185,5 +185,5 @@ deploy:
   type: git
   repo: 
     github: git@github.com:Ryuurock/Ryuurock.github.io.git
-    oschina: https://git.oschina.net/sherlockl/sherlockl.git
+#    oschina: https://git.oschina.net/sherlockl/sherlockl.git
   branch: master
