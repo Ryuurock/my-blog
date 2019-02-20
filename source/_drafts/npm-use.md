@@ -71,6 +71,7 @@ import log from 'log';
 ```
 此时我们就能达到和webpack的alias类似的效果了
 当然要取一个和node_modules下面不同名的名称，以免造成无法预知的问题。
+最重要的是，ide依然能读取到该模块的类型，智能提示依然可用。
 
 ### tarball
 tarball就是tar.gz或者.tgz文件，支持直接从一个http(s)地址或一个相对路径的文件地安装，如
@@ -107,3 +108,34 @@ npm install jquery/jquery
 
 ## package.json字段篇
 
+这里为了方便查看我直接汇总成一个表格
+
+| 字段名称 | 是否必填 | 类型 | 描述 |
+| ------ | ------ | ------ | ------ |
+| name | Y | String |这个包的名称（正则：`^(?:@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$`） |
+| version | Y | String(x.x.x) | 版本号 |
+| description | N | String | 项目/包的米描述 |
+| keywords | N | Array<String> | 项目/包的关键字（在npmjs.org搜索的时候可能被用到，类似SEO） |
+| homepage | N | String | 项目的在线地址（若有），不带http://等带协议前缀。 |
+| bugs | N | Object | 可选字段，问题追踪系统的URL或邮箱地址。npm bugs用的上。 |
+| license | N | string | 该项目的开源许可类型。 |
+| author | N | Object | 作者的一组信息，如姓名、邮箱等 |
+| files | N | Array<String> | 项目包含的一组文件，如果是文件夹，文件夹下的文件也会被包含。如果需要把某些文件不包含在项目中，添加一个`.npmignore`文件。这个文件和`gitignore`类似。 |
+| main | N | String | 如果这个项目是一个npm包，它描述的应该是你程序的入口，在被`require`时指向的就应该是它 |
+| bin | N | Object | 用来声明该项目中的命令，假如它是一个工具的话，比如webpack、vue-cli等，在被安装时，它会被安装到`node_modules/.bin`目录中去，在执行npm run scripts的命令时便可以直接运行 |
+| directories | N | Object | 用于指示包的目录结构 |
+| repository | N | Object/String | 用来描述该项目的git仓库地址 |
+| scripts | N | Object | 可在终端使用 npm run xxx 来执行脚本。 |
+| config | N | Object | Config对象中的值在Scripts的整个周期中皆可用，专门用于给Scripts提供配置参数。 |
+| dependencies | N | Object | 当前包依赖的其他包 |
+| devDependencies | N | Object | 如果只需要下载使用某些模块，而不下载这些模块的测试和文档框架，放在这个下面比较不错。 |
+| peerDependencies | N | Object | 兼容性依赖。如果你的包是插件，适合这种方式。 |
+| bundledDependencies | N | Object | 发布包时同时打包的其他依赖。 |
+| optionalDependencies | N | Object | 如果你想在某些依赖即使没有找到，或则安装失败的情况下，npm都继续执行。那么这些依赖适合放在这里。 |
+| Engines | N | Object | 可以指定node版本：`{ "engines" : {"node" : ">=0.10.3 <0.12" } }`或者是npm版本`{ "engines" : {"npm" : "~1.0.20" } }` |
+| engineStrick | N | Boolean | 如果你肯定你的程序只能在制定的engine上运行，设置为true。 |
+| os | N | Array<String> | 指定模块可以在什么操作系统上运行，如：`"os" : [ "darwin","linux" ]` |
+| CPU | N | Array<String> | 指定CPU类型，如：`"cpu" : [ "x64","ia32" ]` |
+| preferGlobal | N | Boolean | 如果你的包是个命令行应用程序，需要全局安装，就可以设为true。 |
+| private | N | Boolean | 如果private为true，npm会拒绝发布。这可以防止私有repositories不小心被发布出去。 |
+| publishConfig | N | Object | 发布时使用的配置值放这。 |
