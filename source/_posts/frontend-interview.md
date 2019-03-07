@@ -12,7 +12,7 @@ tags:
 # 基本的JavaScript问题
 ## 使以下代码正常运行：
 ![](1.webp)
-答案：
+参考答案：
 ```js
 Array.prototype.multiply = function() {
   this.push(...this.map(item => Math.pow(item, 2)));
@@ -23,7 +23,7 @@ console.log(a);
 ```
 ## 以下代码在 JavaScript 中返回`false`。 请说明为什么
 ![](2.webp)
-答案：[为什么0.1+0.2不等于0.3](https://segmentfault.com/a/1190000012175422)
+参考答案：[为什么0.1+0.2不等于0.3](https://segmentfault.com/a/1190000012175422)
 不想看的我直接一句话总结
 > 0.1在被转换成二进制时是一个**二进制无限循环小数**，但计算机内存有限在某个精度点直接舍弃。当代码被编译或解释后，0.1已经被四舍五入成一个与之很接近的计算机内部数字，以至于计算还没开始，一个很小的舍入错误就已经产生了。这也就是 0.1 + 0.2 不等于0.3 的原因 
 解决办法：使用[bignumber.js](https://github.com/MikeMcl/bignumber.js)
@@ -221,8 +221,8 @@ MDN[TypedArray](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Referenc
 说实话，都看得我头皮发麻，因为这些api似乎日常并不怎么使用，但是由于是对内存块进行二进制操作，会极大的提升性能。似乎很多在线的图片编辑器会采用类似的api进行处理以保证性能😥
 ## 函数的默认参数如何工作？
 如果我们在调用 makeAPIRequest 函数时必须使用timeout的默认值，那么正确的语法是什么？
-![](11.webp)
-答案：传入`undefined`，因为满足使用默认参数的条件就是传入的值必须全等于`undefined` 
+![](13.webp)
+参考答案：传入`undefined`，因为满足使用默认参数的条件就是传入的值必须全等于`undefined` 
 # JavaScript前端应用设计问题
 这类问题相较于上面的较为开放，我选了几个觉的比较有意思的记录下
 ## HTTP/2 将如何影响 JavaScript 应用程序打包？
