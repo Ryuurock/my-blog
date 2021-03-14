@@ -23,7 +23,8 @@ npm i react -S --no-package-lock
 ```bash
 npm config set ignore-scripts true
 ```
-
+`--production`
+这个命令可以在安装时忽略掉`devDependencies`里声明的依赖，可以在某些场景减少依赖包的安装时间，比如我们在构建时可能不需要类似`webpack-dev-server`这样的包，就可以把它放在`devDependencies`，所有构建依赖放到`dependencies`里，一定程度上可以减少构建时间
 ## 包引用篇
 
 可能我们平时require或者import的时候的包 要么是相对路径的包 要么是webpack alias的包，然后就是node_modules里的包，可是npm可以安装很多种形式的包，运行
