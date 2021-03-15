@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "start": "hexo server",
-    "deploy": "hexo deploy"
+    "deploy": "hexo deploy",
+    "new": "hexo new"
   },
   "hexo": {
-    "version": "3.9.0"
+    "version": "4.0.0"
   },
   "dependencies": {
     "hexo": "^4.0.0",
