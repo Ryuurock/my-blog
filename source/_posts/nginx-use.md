@@ -34,7 +34,7 @@ $ ./configure --with-http_ssl_module
 $ make
 $ make install
 ```
-如果一切顺利，nginx就安装好了，当然，如果因为系统原因报一些缺胳膊少腿的错，就先补上响应的系统组件
+如果一切顺利，nginx就安装好了，当然，如果因为系统原因报一些缺胳膊少腿的错，就先补上相应的系统组件
 #### 配置nginx
 先不忙启动nginx，我们还需要修改配置，打开`/usr/local/nginx/conf/nginx.conf`文件
 ```bash

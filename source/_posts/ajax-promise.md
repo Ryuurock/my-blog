@@ -117,7 +117,7 @@ if ( condition ) {
 if ( condition2 ) {
   ajaxArray.push( $.ajax( '/example3' ) );
 }
-...
+```
 
 ```javascript
 $.when.apply( $, ajaxArray ).then( function( data ) {
