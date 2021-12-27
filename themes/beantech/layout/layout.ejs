@@ -5,24 +5,22 @@
 <%- partial('_partial/head') %>
 
 <!-- hack iOS CSS :active style -->
+
 <body ontouchstart="">
-	<%- partial('_partial/header',{cache: true}) %>
-	
+    <%- partial('_partial/header',{cache: true}) %>
+
     <%- partial('_partial/nav',{cache: true}) %>
 
-    <!-- Main Content -->
     <%- body %>
 
-    <!-- Footer -->
     <%- partial('_partial/footer') %>
 
-
-	<a id="rocket" href="#top" class="iconfont icon-23435"></a>
-	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <a id="rocket" href="#top" class="iconfont icon-23435"></a>
+    <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
     <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
-<!-- Image to hack wechat -->
-<!-- <img src="<%= config['root'] %>img/icon_wechat.png" width="0" height="0" /> -->
-<!-- Migrate from head to bottom, no longer block render and still work -->
+    <!-- Image to hack wechat -->
+    <!-- <img src="<%= config['root'] %>img/icon_wechat.png" width="0" height="0" /> -->
+    <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
 

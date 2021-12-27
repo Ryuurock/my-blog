@@ -2,12 +2,10 @@
 layout: layout
 ---
 <!-- Modify by Yu-Hsuan Yen -->
-
 <!-- Post Content -->
 <article>
     <div class="container">
         <div class="row">
-
             <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -17,52 +15,40 @@ layout: layout
                 <%- page.content %>
 
                 <hr>
-                <!-- JiaThis Button BEGIN -->
-                <!-- <div class="jiathis_style_24x24">
-                    <a class="jiathis_button_weixin"></a>
-                    <a class="jiathis_button_qzone"></a>
-                    <a class="jiathis_button_tsina"></a>
-                    <a class="jiathis_button_cqq"></a>
-                    <a class="jiathis_button_fb"></a>
-                    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-                </div>
-                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>-->
-                <!-- JiaThis Button END -->
                 <!-- Pager -->
                 <ul class="pager clearfix">
                     <% if (page.prev){ %>
-                        <li class="previous">
-                            <a href="<%- config.root %><%- page.prev.path %>" data-toggle="tooltip" data-placement="top" title="<%- page.prev.title %>">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="<%- config.root %><%- page.prev.path %>" data-toggle="tooltip" data-placement="top"
+                            title="<%- page.prev.title %>">&larr; Previous Post</a>
+                    </li>
                     <% } %>
                     <% if (page.next){ %>
-                        <li class="next">
-                            <a href="<%- config.root %><%- page.next.path %>" data-toggle="tooltip" data-placement="top" title="<%- page.next.title %>">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="<%- config.root %><%- page.next.path %>" data-toggle="tooltip" data-placement="top"
+                            title="<%- page.next.title %>">Next Post &rarr;</a>
+                    </li>
                     <% } %>
                 </ul>
 
                 <!-- duoshuo Share start -->
                 <% if(config['duoshuo_share'] && config['duoshuo_username']) { %>
-                    <div class="ds-share"
-                        style="text-align: right"
-                        data-thread-key="<%= page.path %>"
-                        data-title="<%= page.title %>"
-                        data-url="<%= page.permalink %>"
-                        data-images="<%= page["header-img"] ? page.permalink + page["header-img"] : '' %>"
-                        data-content="<%- truncate(strip_html(page.content), {length: 50, omission: '...'}) %> | <%= config.SEOTitle %> " >
-                        <div class="ds-share-inline">
-                          <ul  class="ds-share-icons-16">
+                <div class="ds-share" style="text-align: right" data-thread-key="<%= page.path %>"
+                    data-title="<%= page.title %>" data-url="<%= page.permalink %>"
+                    data-images="<%= page["header-img"] ? page.permalink + page["header-img"] : '' %>"
+                    data-content="<%- truncate(strip_html(page.content), {length: 50, omission: '...'}) %> | <%= config.SEOTitle %> ">
+                    <div class="ds-share-inline">
+                        <ul class="ds-share-icons-16">
                             <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
                             <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
                             <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
                             <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
-                          </ul>
-                          <div class="ds-share-icons-more">
-                          </div>
+                        </ul>
+                        <div class="ds-share-icons-more">
                         </div>
-                    <hr>
                     </div>
+                    <hr>
+                </div>
                 <% } %>
 
                 <!-- UY BEGIN -->
@@ -72,16 +58,16 @@ layout: layout
                 <!-- UY END -->
                 <!-- disqus comment start -->
                 <% if(config['disqus_username']) { %>
-                    <div class="comment">
-                        <div id="disqus_thread" class="disqus-thread"></div>
-                    </div>
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
                 <% } %>
                 <!-- disqus comment end -->
             </div>
-            
+
             <!-- Tabe of Content -->
             <%- partial('_partial/toc') %>
-                
+
             <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -94,8 +80,9 @@ layout: layout
                     <!-- no hr -->
                     <h5><a href="<%= config.root %>tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                       <% page.tags.forEach(function(tag){ %>
-                          <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
+                        <% page.tags.forEach(function(tag){ %>
+                        <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>"
+                            title="<%= tag.name %>"><%= tag.name %></a>
                         <% }) %>
                     </div>
                 </section>
@@ -108,7 +95,7 @@ layout: layout
                 <ul class="list-inline">
 
                     <% config.friends.forEach(function(friend){ %>
-                        <li><a href="<%= friend.href %>" target="_blank"><%= friend.title %></a></li>
+                    <li><a href="<%= friend.href %>" target="_blank"><%= friend.title %></a></li>
                     <% }); %>
                 </ul>
                 <% }%>
@@ -124,15 +111,17 @@ layout: layout
     var _user = '<%= config['duoshuo_username'] %>';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = {
+        short_name: _user
+    };
+    (function () {
         var ds = document.createElement('script');
         ds.type = 'text/javascript';
         ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        (document.getElementsByTagName('head')[0] ||
+            document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
@@ -146,8 +135,10 @@ layout: layout
     var disqus_identifier = "<%= page.permalink %>";
     var disqus_url = "<%= page.permalink %>";
 
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
@@ -155,29 +146,45 @@ layout: layout
 <!-- disqus embedded js code start end -->
 <% } %>
 
-
 <% if(config['anchorjs']) { %>
 <!-- async load function -->
 <script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
+    function async (u, c) {
+        var d = document,
+            t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
     }
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <style>
     /* place left on bigger screen */
+    .anchorjs-link {
+        display: none;
+    }
+
     @media all and (min-width: 800px) {
-        .anchorjs-link{
+        .anchorjs-link {
+            display: block;
             position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top : -0.1em;
+            left: -1.75em;
+            font-size: 1em;
+            margin-top: -0.1em;
+            opacity: 0;
+            text-decoration: none;
         }
+    }
+
+    :hover>.anchorjs-link,
+    .anchorjs-link:focus {
+        opacity: 1;
     }
 </style>
 <% } %>
