@@ -187,7 +187,7 @@ sitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:Ryuurock/Ryuurock.github.io.git
+  repo: https://github.com/Ryuurock/my-blog.git
   branch: master
   token: $secrets.ACCESS_TOKEN
   name: longwanxiang
