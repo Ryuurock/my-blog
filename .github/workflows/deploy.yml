@@ -15,7 +15,10 @@ jobs:
       - name: Build
         run: yarn build
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: theme-keep/hexo-deploy-github-pages-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # The repository the action should deploy to.
+          PUBLISH_REPOSITORY: ryuurock/ryuurock.github.io
+          # The branch the action should deploy to.
+          BRANCH: master
