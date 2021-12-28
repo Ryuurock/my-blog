@@ -6,11 +6,9 @@ hexo.extend.generator.register('robotstxt', function () {
       const isVercel = process.env.VERCEL_ENV === 'production';
       if (isVercel) {
         body = 'User-agent: Googlebot\nDisallow: /';
-      } else {
-        body = 'User-agent: *\nAllow: /';
       }
 
-      body += `\n\nSitemap: https://${isVercel ? 'ryuurock.vercel.app' : 'ryuurock.github.io'}/sitemap.xml`
+      body += `User-agent: *\nAllow: /\n\nSitemap: https://${isVercel ? 'ryuurock.vercel.app' : 'ryuurock.github.io'}/sitemap.xml`
 
       return body;
     }
