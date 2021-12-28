@@ -187,9 +187,7 @@ sitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: 
-    github: git@github.com:Ryuurock/Ryuurock.github.io.git
-#    oschina: https://git.oschina.net/sherlockl/sherlockl.git
+  repo: git@github.com:Ryuurock/Ryuurock.github.io.git
   branch: master
   token: $secrets.ACCESS_TOKEN
   name: longwanxiang
