@@ -8,7 +8,7 @@ hexo.extend.generator.register('robotstxt', function () {
         body = 'User-agent: Googlebot\nDisallow: /';
       }
 
-      body += `User-agent: *\nAllow: /\n\nSitemap: https://${isVercel ? 'ryuurock.vercel.app' : 'ryuurock.github.io'}/sitemap.xml`
+      body += `\n\nUser-agent: *\nAllow: /\n\nSitemap: https://${isVercel ? 'ryuurock.vercel.app' : 'ryuurock.github.io'}/sitemap.xml`
 
       return body;
     }
