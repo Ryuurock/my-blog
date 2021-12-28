@@ -192,3 +192,5 @@ deploy:
 #    oschina: https://git.oschina.net/sherlockl/sherlockl.git
   branch: master
   token: $secrets.ACCESS_TOKEN
+  name: longwanxiang
+  email: lwx_1993@outlook.com
