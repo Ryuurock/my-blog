@@ -1,5 +1,5 @@
 ---
-title: 使用递归函数对树形菜单进行搜索
+title: 使用递归算法对树形菜单进行搜索
 catalog: true
 date: 2017-11-24 13:55:24
 subtitle: 
@@ -100,4 +100,3 @@ let result = recursionFilter( treeData, function( item ) {
 } )
 ```
 `filter`参数就是调用者传递的回调参数，执行的结果应该是一个boolean值来确定当前项目是否符合检索条件。
-
