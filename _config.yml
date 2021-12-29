@@ -173,6 +173,7 @@ markdown:
   anchors:
     permalink: true
     permalinkClass: anchorjs-link
+    permalinkSymbol: ''
   
 # Extensions
 ## Plugins: https://hexo.io/plugins/
