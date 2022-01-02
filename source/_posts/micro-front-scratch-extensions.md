@@ -104,6 +104,7 @@ new Promise(resolve => {
 ## 收益
 - 扩展作为一个单独的服务，独立开发，独立部署，构建即生效，减少发布到私有源再更新其他项目的的成本
 - 扩展的 js 代码真正做到按需加载，新的扩展几乎不影响 main.js 和 scratch 本身的大小。
+- 减少主应用的构建工具在这里花费的时间
 
 ## 复盘
-将扩展服务的入口文件 hard coding 到代码里始终不太优雅，如果有必要，我们可以将 scratch-extensions 作为 package 发布，然后在代码里 import，然后通过 webpack 的 external 能力，在主应用上配置scratch-extensions 的外部链接来将它提取出去。
+将扩展服务的入口文件 hard coding 到代码里始终不太优雅，如果有必要，我们可以将 scratch-extensions 作为 package 发布，然后在代码里 import，然后通过 webpack 的 external 能力，在主应用上配置scratch-extensions 的外部链接来将它提取出去。甚至我们可以配合 webpack5 的 [Module Federation（模块联邦）](https://webpack.docschina.org/concepts/module-federation/#containerplugin-low-level)达到一样的效果
