@@ -161,7 +161,7 @@ removeEventListener(eventType, handler, useCapture)
 3. overflow的值不为visible
 4. display的值为inline-block、table-cell、table-caption
 5. position的值为absolute或fixed
-6. display：table也认为可以生成BFC，其实这里的主要原因在于Table会默认生成一个匿名的table-cell，正是这个匿名的table-ccell生成了BFC
+6. display：table也认为可以生成BFC，其实这里的主要原因在于Table会默认生成一个匿名的table-cell，正是这个匿名的table-cell生成了BFC
 
 BFC的应用
 1. 解决margin重叠问题
@@ -246,7 +246,7 @@ BFC的应用
 ## 优化篇
 ### 网络加载类
 #### 域名收敛
-对于PC 上的DNS 通常情况下就是几十ms. 因为PC可以存储很多的域名地址,而且TTL长着呢. 但是，对于手机端来说, 由于我们良心的3G和4G网络运营商节省开支的缘由, 一般在手机端上解析DNS 会到1s+. 所以，这样算下来， 首屏3s的最佳时间，你就已经没了1/3, 那还玩个屁. 不过，我们可以用很多预加载技术，比如localstorage,session,manifest等预先存储资源. 在PC上极度推崇domian sharding时, 在手机端上，此法不见得能行得通了.
+对于PC 上的DNS 通常情况下就是几十ms. 因为PC可以存储很多的域名地址,而且TTL长着呢. 但是，对于手机端来说, 由于我们良心的3G和4G网络运营商节省开支的缘由, 一般在手机端上解析DNS 会到1s+. 所以，这样算下来， 首屏3s的最佳时间，你就已经没了1/3, 那还玩个屁. 不过，我们可以用很多预加载技术，比如localStorage,session,manifest等预先存储资源. 在PC上极度推崇domain sharding时, 在手机端上，此法不见得能行得通了.
 所以, 一般来说，在手机端上的域名数不能超过5个。 基本上的分配就是
 html +1
 css +1 

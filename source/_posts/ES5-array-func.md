@@ -65,8 +65,8 @@ let newArr = arr.filter( function( item ) {
 ### some
 some方法好像比较少用到，还是上面的数组，如果有个需求是判断上面的用户**有一个**大于30岁的，就去执行某个事情的时候就派上用场了，some方法返回的是一个boolean类型的数据
 ```js
-let isSomeGt30 = arr.some( function( itme ) {
-  return itme.age > 30;
+let isSomeGt30 = arr.some( function( item ) {
+  return item.age > 30;
 } );
 // true
 ```
@@ -76,8 +76,8 @@ every方法和some方法正好相反，some方法是只要有一个返回值是t
 
 
 ```js
-let isSomeGt30 = arr.every( function( itme ) {
-  return itme.age > 30;
+let isSomeGt30 = arr.every( function( item ) {
+  return item.age > 30;
 } );
 // false
 ```
@@ -92,7 +92,3 @@ var sum = [1, 2, 3, 4].reduce(function ( previous, current, index, array ) {
 ```
 
 当然出于学习的目的的话，我们还应该理解这些方法的内部实现，比如作为较低版本浏览器的`polyfill`，能够更有效的帮助我们深入理解这几个函数。
-
-
-
-

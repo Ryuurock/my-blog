@@ -13,7 +13,7 @@ tags:
 ![效果图](20171124140432.jpg)
 
 需求是匹配到关键字的菜单及其子菜单显示出来，就是说只要当前的菜单项匹配到了，那子菜单也全部显示。
-天真的我以为用个`[].fitler`函数就行了，直到我看到了数据是这样的
+天真的我以为用个`[].filter`函数就行了，直到我看到了数据是这样的
 ```json
 [ {
   text: "菜单1",
@@ -42,7 +42,7 @@ tags:
  */
 function recursionSearch( arrayData, searchText ) {
   // 声明一个新的数组，不去操作原先的数据
-  let newArry = [];
+  let newArray = [];
   // 第一层数据直接是菜单，所以不需要取nodes
   arrayData = arrayData.nodes || arrayData
   // 循环读取菜单数据
@@ -51,7 +51,7 @@ function recursionSearch( arrayData, searchText ) {
     // 菜单名称模糊查询
     if ( item.text && item.text.indexOf( searchText ) > -1 ) {
       // 条件满足就直接保留，不需要再遍历查找子菜单的项目
-      newArry.push( item );
+      newArray.push( item );
     } else {
       // 判断是否还有子菜单
       if ( item.nodes ) {
@@ -60,13 +60,13 @@ function recursionSearch( arrayData, searchText ) {
         if ( result.length ) {
           item.nodes = result;
           // 将结果放进新的item
-          newArry.push( item )
+          newArray.push( item )
         }
       }
     }
   }
   // 把筛选结果返回出去
-  return newArry;
+  return newArray;
 }
 ```
 结果终究是出来了，居然花了一个多小时，中间一度要放弃了，但是秉着“老司机”的光环坚持弄出来了，还是蛮开心的。令人汗颜的是花了这么久。(lll￢ω￢)
@@ -75,23 +75,23 @@ function recursionSearch( arrayData, searchText ) {
 如果这里需求变了，不再按照title来检索，而是检索disabled的项目，或者其他条件呢，上面的递归函数则需要变动一下，将检索条件开放出来由调用者自己来决定
 ```js
 function recursionFilter( arrayData, filter ) {
-  let newArry = [];
+  let newArray = [];
   arrayData = arrayData.nodes || arrayData
   for ( let i = 0, item; item = arrayData[ i++ ]; ) {
 
     if ( filter( item ) ) {
-      newArry.push( item );
+      newArray.push( item );
     } else {
       if ( item.nodes ) {
         let result = recursionFilter( item, filter );
         if ( result.length ) {
           item.nodes = result;
-          newArry.push( item )
+          newArray.push( item )
         }
       }
     }
   }
-  return newArry;
+  return newArray;
 }
 
 // 调用者

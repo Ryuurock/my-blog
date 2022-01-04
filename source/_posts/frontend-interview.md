@@ -29,7 +29,7 @@ console.log(a);
 解决办法：使用[bignumber.js](https://github.com/MikeMcl/bignumber.js)
 ## 解决以下异步代码问题。
 检索并计算属于同一教室中每个学生的平均分数，例子中教室 ID 为 75。每个学生可以在一年内参加一门或多门课程。以下 API 可用于检索所需数据。
-![](3.webp) 
+![](3.webp)
 编写一个接受教室 ID 的函数，并根据该函数计算该教室中每个学生的平均值。 该函数的最终输出应该是带有平均分数的学生列表： 
 ```json
 [
@@ -211,7 +211,7 @@ const obj = {
 ## 如何在 JSON 中序列化以下对象？
 如果我们将以下对象转换为 JSON 字符串，会发生什么？
 ![](11.webp) 
-`key1`属性将消失，因为Symbol类型的值不会被`JSON.strigify`返回，我们可以在调用`JSON.strigify`之前手动调用Symbol值的toString方法 
+`key1`属性将消失，因为Symbol类型的值不会被`JSON.stringify`返回，我们可以在调用`JSON.stringify`之前手动调用Symbol值的toString方法 
 ## 你熟悉 Typed Arrays 吗？ 如果熟悉，请解释他们与 JavaScript 中的传统数组相比的异同？
 翻译过来似乎叫**类数组**？
 TypedArray本质上是一个抽象类，他表示9中特定类型： `Int8Array`, `Uint8Array`, `Int16Array`, `Uint16Array`, `Int32Array`, `Uint32Array`, `Float32Array`, `Float64Array`,还有一种只针对Canvas颜色值的 `Uint8ClampedArray` 
@@ -236,7 +236,7 @@ http/2的多路复用会使我们对资源的打包方式有所调整，比如�
 * fetch 默认情况下不会发送 cookie
 * 无法获取progress，也就是说无法用fetch做出有进度条的请求
 * 不能中断，我们知道传统的xhr是可以通过调用abort方法来终止我们的请求的 
-其实javasript的社区一直很活跃，相信上述问题很快会在未来的更新中解决
+其实javascript的社区一直很活跃，相信上述问题很快会在未来的更新中解决
 # 前端基础和理论问题 
 ## HTML 中 Doctype 的用途是什么？
 > <!DOCTYPE> 声明不是 HTML 标签；它是指示 web 浏览器关于页面使用哪个 HTML 版本进行编写的指令。 

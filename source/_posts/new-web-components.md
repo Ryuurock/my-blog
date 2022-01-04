@@ -22,11 +22,11 @@ tags:
 
 > 注：这里我们直接排除V0，因为V0即将被废弃
 
-可以看到目前的支持率不太理想，但是Firefox已经在最近发布一个版本中支持，chrome也早已支持。Safair目前只支持 autonomous custom elements（自主自定义标签），而 Edge也正在积极实现中。
+可以看到目前的支持率不太理想，但是Firefox已经在最近发布一个版本中支持，chrome也早已支持。Safari目前只支持 autonomous custom elements（自主自定义标签），而 Edge也正在积极实现中。
 
 我们先看看使用方法：
 通过[CustomElementRegistry](https://developer.mozilla.org/zh-CN/docs/Web/API/CustomElementRegistry) 对象来处理web文档中的custom elements — 该对象允许你注册一个 custom element，返回已注册 custom elements的信息，等等。
-可以通过 [CustomElementRegistry.define()](https://developer.mozilla.org/zh-CN/docs/Web/API/CustomElementRegistry/define)方法来注册一个custom emelent，该方法接受以下参数：
+可以通过 [CustomElementRegistry.define()](https://developer.mozilla.org/zh-CN/docs/Web/API/CustomElementRegistry/define)方法来注册一个custom element，该方法接受以下参数：
 * 一个 DOMString，用于表示所创建的元素的名称。注意，custom element 的名称中必须要有短横线。
 * 一个类对象，用于定义元素的行为。该类需要继承自[HTMLParagraphElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLParagraphElement)
 * 一个包含 extends属性的配置对象，是可选参数。它指定了所创建的元素继承自哪个内置元素，可以继承任何内置元素。

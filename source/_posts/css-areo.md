@@ -6,7 +6,7 @@ subtitle:
 header-img: post/2017100323131019.jpg
 tags:
 - css
-- areo
+- aero
 ---
 在写这篇文章之前，的我认知还停留在web页面里是无法做到像`ios`和`MAC`下那种毛玻璃效果的，虽然我知道`filter`属性，但是因为它是通过改变整个容器的失焦而不是透明背景的高斯模糊。
 

@@ -5,7 +5,7 @@ date: 2017-11-27 21:21:54
 subtitle: 
 header-img: post/IMG_3167.JPG
 tags:
-- chrome extention
+- chrome extension
 ---
 讲真，在这之前我甚至不知道chrome的插件是由`javascript`驱动的，最近因为为了优化产品的体验，开始从chrome插件来下手，因为chrome插件能强势侵入别家的网页，篡改任何你想篡改的东西，甚至可以将`http`的请求和响应数据进行修改。官方文档需要梯子， [360翻译的文档](http://open.chrome.360.cn/)（不是一般的老，看网页布局就知道了）, [百度翻译的文档](https://chajian.baidu.com/developer/extensions/getstarted.html).废话不多说，先来看看入口吧
 chrome插件最重要的是一个叫`manifest.json`的文件，文件描述了整个扩展的行为：
@@ -30,7 +30,7 @@ chrome插件最重要的是一个叫`manifest.json`的文件，文件描述了�
 
 当然这只是一个大致流程，扩展的`contentScript`与页面唯一的通信方法则是触发某个dom的原生事件或自定义事件，再传入所需的数据。**发布/订阅模式**看来真的是万能啊。
 
-当然，为了其他人开发的方便性和可维护性，我建立了一个单独的模块`chromeExtentionHandler`，由这个模块统一管理与扩展的交互（这也是发布/订阅模式的弊端，过多的订阅发布，容易造成困扰，降低代码可读性）
+当然，为了其他人开发的方便性和可维护性，我建立了一个单独的模块`chromeExtensionHandler`，由这个模块统一管理与扩展的交互（这也是发布/订阅模式的弊端，过多的订阅发布，容易造成困扰，降低代码可读性）
 
 监听来自扩展的事件，只需要一处就够了，扩展通过带过来的数据来告知模块需要发布或处理怎样的数据，所以定义的页面端的模块传入数据是这样的
 ```json
@@ -42,7 +42,7 @@ chrome插件最重要的是一个叫`manifest.json`的文件，文件描述了�
 ```
 所以我在事件监听处是这么写的
 ```js
-document.body.addEventListener( 'extensionBrowerEvent', function( { detail } ) {
+document.body.addEventListener( 'extensionBrowserEvent', function( { detail } ) {
   let jsonDetail = null;
   try {
     jsonDetail = typeof detail === 'object' ? ( detail || {} ) : JSON.parse( detail );
@@ -195,4 +195,3 @@ XMLHttpRequest.prototype.send = ( function( original_function ) {
 * 自定义事件带入的数据需要{ detail: data } 这样的结构，因为在接收方需要以`event.detail`的方式去取。
 
 说了这么久感觉讲得不是很好，所以决定直接把代码放到github吧。[仓库地址](https://github.com/Ryuurock/blog-code/tree/master/chrome-extention-demo)
-

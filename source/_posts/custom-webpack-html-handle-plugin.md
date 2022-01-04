@@ -65,7 +65,7 @@ module.exports = class HtmlEjsWebpackPlugin {
 ```
 这里的customData是我们的自定义数据，比如title keywords等，用来静态生成html内容。然后就是html-loader，为了方便，我们可以直接声明一个nodejs的全局函数:
 ```js
-// 声明一个全局的ejsrennder函数
+// 声明一个全局的ejsRender函数
 global.ejsRender = ejs.render;
 ```
 这样我们就可以在html代码里这样写

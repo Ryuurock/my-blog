@@ -41,10 +41,10 @@ export function register( type, fn ) {
 /**
  * 再提供提供一个用于发布事件的函数，组件可用，页面也可以用
  * @param type 发布事件的类型
- * @param backParama 发布事件时携带的参数
+ * @param backParam 发布事件时携带的参数
  */
-export function trigger( type, ...backParama ) {
-  return _MESSAGES[ type ] && _MESSAGES[ type ].forEach( item => item.apply( this, backParama ) );
+export function trigger( type, ...backParam ) {
+  return _MESSAGES[ type ] && _MESSAGES[ type ].forEach( item => item.apply( this, backParam ) );
 }
 
 // 然后是组件本身的一些操作做完后

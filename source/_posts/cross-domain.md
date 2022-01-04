@@ -1,5 +1,5 @@
 ---
-title: 关于javscript的跨域问题的几种解决办法
+title: 关于javascript的跨域问题的几种解决办法
 catalog: true
 date: 2017-06-27 22:38:47
 subtitle:
@@ -56,7 +56,7 @@ window.callback = function( data ) {
 <script src="http://example.com/getData?callback=yourcallback"></script>
 
 ```
-`yourcallback`就是你定义的相应函数。通过jsonp的方式访问跨域的api有很多弊端，比如
+`yourCallback`就是你定义的相应函数。通过jsonp的方式访问跨域的api有很多弊端，比如
 
 * 只能发起get请求，无法post数据
 * 执行上下文只能是global(如果你要通过callback参数传递一串context我也无异议)
@@ -84,7 +84,7 @@ document.domain = 'iframe.com';
 
 ### 通过后端服务解决
 也许你只是想解决webapi的跨域问题又拒绝使用jsonp这种感觉有点‘low’的解决方案，这时候就轮到服务端代码登场了，通过修改响应头信息来告知浏览器这个请求是否是安全可靠的。
-我们知道http协议的请求头/应头都有一串键值对，`Origin`这个属性会在我们的请求头里，`Access-Control-Allow-Origin`这个属性可能会在我们的响应头里（因为在本域名请求下这个属性有没有都无所谓），这就是我们能成功实现跨域接口访问的关键。当服务器端在`ccess-Control-Allow-Origin`里包含了我们的`Origin`，那浏览器就发起真正的请求，接口就能正确相应，这里以java为例
+我们知道http协议的请求头/应头都有一串键值对，`Origin`这个属性会在我们的请求头里，`Access-Control-Allow-Origin`这个属性可能会在我们的响应头里（因为在本域名请求下这个属性有没有都无所谓），这就是我们能成功实现跨域接口访问的关键。当服务器端在`access-Control-Allow-Origin`里包含了我们的`Origin`，那浏览器就发起真正的请求，接口就能正确相应，这里以java为例
 ```java
 // 这里是过滤器里面的方法
 @Override  
